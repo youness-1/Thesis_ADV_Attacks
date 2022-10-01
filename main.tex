@@ -1,0 +1,122 @@
+\documentclass[a4paper,12 pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{listingsutf8}
+\usepackage[utf8]{inputenc} 
+\usepackage{multirow}
+\usepackage{soul}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[bottom]{footmisc}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+
+\usepgfplotslibrary{external}
+\tikzexternalize
+
+\usepackage[left=1.1in,right=1.1in, top=1in, bottom= 1in]{geometry}
+
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{biblio.bib}
+\definecolor{blu_dmi}{HTML}{002e62}
+
+% \addbibresource{bibliografia.bib
+% \pagestyle{plain}
+% \setlength{\topmargin}{0.0in}
+% \setlength{\headheight}{0.2in}
+% \setlength{\headsep}{0.0in}
+% \setlength{\footskip}{0.5in}
+% \setlength{\textheight}{8.3in}
+% \setlength{\textwidth}{6.0in}
+% \setlength{\oddsidemargin}{0.5in}
+% \setlength{\evensidemargin}{0.5in}
+% \setlength{\parindent}{0.4 in}
+% \onehalfspacing
+
+\graphicspath{ {images/} }
+
+\title{
+{Instagram-inspired attacks to object detection and image segmentation}\\
+{\large Università Degli Studi di Perugia}\\
+\vspace{25pt}
+{\includegraphics[scale=0.2]{logo.png}}
+}
+
+\author{El Assl Youness}
+\date{September 2022}
+
+%\renewcommand*\contentsname{Indice}
+%\renewcommand{\chaptername}{Capitolo}
+%\renewcommand{\figurename}{Figura}
+%\renewcommand{\lstlistingname}{Codice}
+
+\begin{document}
+
+\include{front}
+
+\begin{abstract}
+    Object detection is a technology that is used to detect instances of objects in images or videos.
+Today this technology is well established and it is applied in numerous territories of image processing, including picture retrieval, security, observation, computerized vehicle systems and machine investigation.
+This raises many concerns as we depend more and more from a technology that is still vulnerable to attacks and that can also be used to extract unauthorized information from our data, especially from the images shared on Social Media.
+
+In this work, we propose a black-box adversarial-filter-based attack towards some state-of-the-art object detectors (i.e. YOLO and DETR).
+Unlike most adversarial attack techniques found in literature that add small perturbations that cannot be easily detected by human eyes but can be easily recognized by software, our filter composition cannot be distinguished from any other filter composition used extensively every day to enhance photos and images.
+
+    
+    
+
+  
+\end{abstract}
+
+\tableofcontents
+
+\include{Introduzione/introduzione}
+
+\include{Attack/attack}
+
+\include{Experiments/experiments}
+
+\chapter*{Conclusion}
+
+In this thesis we studied, analyzed and tested the applicability of the AGV algorithm with respect to different object detection models.  To obtain the adversarial perturbation, popular Instagram-like image filters were optimized by employing a multi-objective evolutionary approach and these filters were applied across the entire image in order to generate the adversarial examples.  The optimization process considers both an object detection performance (ODP) and an image quality assessment index (SSIM) when searching for the optimal perturbation. \\
+
+
+ The new version of the AGV algorithm was empirically evaluated on different state-of-the-art object detectors. As the results show, the method is able to generate natural-looking and artifacts-free adversarial samples that can effectively decrease the task performance of the tested models, resulting in successful attacks. \\
+
+%{\bf Due parole sulla transferability. Verificare se negli altri paper citati è mai stata studiata.}
+
+Results also show that AGV attacks can be transferable between various detector architectures.
+This makes it particularly practical to implement real-world attacks. For instance, the filters that are optimized for lowering DETR performance can effectively attack YOLO as shown in Fig \ref{hysto_transfer} 
+
+
+%{\bf Due parole sull'analisi della qualità delle immagini risultanti. Oltre ad essere artifacts-free per natura la qualità misurata con le più note misure risulta molto alta o addirittura migliore dell'originale secondo BRISQUE.}
+
+Our research suggests that AGV can execute successful attacks in a "blackbox" environment, i.e., without being aware of the characteristics and designs of the targeted network and unlike patch-based and perturbation-based attacks AGV generates nice and natural looking adversarial images.
+%This is also shown by the table \ref{tab_transfer} where
+
+
+
+\noindent Moreover, the attack can be considered very efficient because the number of queries needed to perform it is relatively small considering the limited knowledge and access to the target models.
+
+
+%{\it vedere se si riesce a trovare un termine di paragone}
+
+The effective implementation of AGV also demonstrates the present detector architectures inherent susceptibility to these kinds of filter-based adversarial attacks.
+
+
+
+
+ 
+
+
+\printbibliography[title={Bibliography}]
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\end{document}
